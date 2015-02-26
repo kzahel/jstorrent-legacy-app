@@ -25,7 +25,7 @@ function WindowManager() {
     // will be remembered. so put it in.
     this.mainWindowOpts = {
         width: 865,
-        frame: 'none',
+        frame: 'true',
         height: 610,
         resizable: true,
         minHeight: 32,
