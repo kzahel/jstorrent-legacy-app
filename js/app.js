@@ -255,7 +255,7 @@ App.prototype = {
         }
     },
     onAcceptLanguages: function(s) {
-        // detect if 
+        // detect if
         app.analytics.sendEvent('acceptLanguages',window.navigator.language,s)
         if (_.contains(['pt-BR'], window.navigator.language)) {
             this.freeTrialFreeDownloads = 999
@@ -323,7 +323,7 @@ App.prototype = {
         }
         this.createNotification({ details:"Unable to locate download directory: " + folderName,
                                   message: "Missing directory",
-                                  buttons: [ 
+                                  buttons: [
                                       {title:"Keep directory (default)"},
                                       {title:"Remove directory"}
                                   ],
@@ -349,7 +349,7 @@ App.prototype = {
         }
         this.createNotification({ details:"No peers were received from any trackers. Unable to download. Try a more popular torrent or a different torrent site. Or you can:",
                                   message: torrent.get('name'),
-                                  buttons: [ 
+                                  buttons: [
                                       {title:"Add public trackers and reattempt"},
                                       {title:"Do nothing"}
                                   ],
@@ -368,7 +368,7 @@ App.prototype = {
             }
         }
         this.createNotification({ details:"Sorry, this is the free trial version, and you have used all your free downloads",
-                                  buttons: [ 
+                                  buttons: [
                                       {title:"Get JSTorrent Full Version", iconUrl:"/cws_32.png"},
                                       {title:"Why do I have to pay?"},
                                   ],
@@ -432,7 +432,7 @@ App.prototype = {
     },
     pulsate: function() {
         $('#button-options').twinkle(
-            { effect:'drop-css', 
+            { effect:'drop-css',
               effectOptions: {radius:150},
               callback: function(){}
             }
@@ -752,9 +752,36 @@ App.prototype = {
     toolbar_remove: function() {
         app.analytics.sendEvent("Toolbar", "Click", "Remove")
         var torrents = this.UI.get_selected_torrents()
-        this.UI.torrenttable.grid.setSelectedRows([])
-        for (var i=0; i<torrents.length; i++) {
-            torrents[i].remove()
+        var text = "";
+        var selected = false;
+        
+        // First check if any torrents are selected
+        if(torrents.length) {
+            if(torrents.length == 1) {
+                // Only 1 torrent selected, find out its name
+                text = "Remove '" + torrents[0]._attributes.name + "'?";
+            }
+            else if(torrents.length > 1) {
+                // Multiple torrents selected, don't use names
+                text = "Remove " + torrents.length + " torrents?";
+            }
+            
+            var holder = this;
+            
+            // jQuery confirm dialog
+            $.confirm({
+                text: text,
+                confirm: function() {
+                    // User clicked yes, remove the torrent(s)
+                    holder.UI.torrenttable.grid.setSelectedRows([])
+                    for (var i=0; i<torrents.length; i++) {
+                        torrents[i].remove()
+                    }
+                },
+                cancel: function() {
+                    // User clicked cancel, do nothing
+                }
+            });
         }
     },
     openReviewPage: function() {
@@ -777,7 +804,7 @@ App.prototype = {
 
         this.createNotification({id:"pleaseReviewMe",
                                  priority:1,
-                                 buttons: [ 
+                                 buttons: [
                                      {title:"Leave a Review", iconUrl:"/cws_32.png"},
                                      {title:"Don't show this message again"}
                                  ],
@@ -830,7 +857,7 @@ App.prototype = {
         this.checkIsExtensionInstalled( _.bind(function(isInstalled) {
             if (! isInstalled) {
                 this.createNotification({id:"extension",
-                                         buttons: [ 
+                                         buttons: [
                                              {title:"Install the Extension", iconUrl:"/cws_32.png"},
                                              {title:"Don't show this message again"}
                                                   ],
@@ -864,13 +891,13 @@ App.prototype = {
         // TODO -- maybe check disks and invalidate
     },
     focus_or_open_options: function() {
-        if (this.options_window) { 
+        if (this.options_window) {
             this.options_window.focus();
             console.log('options already open'); return;
         }
 
         this.options_window_opening = true
-        chrome.app.window.create( 'gui/options.html', 
+        chrome.app.window.create( 'gui/options.html',
                                   { width: 400,
                                     id: "options",
                                     height: 400 },
@@ -892,7 +919,7 @@ App.prototype = {
         if (this.upsell_window) {
             this.upsell_window.focus()
         }
-        chrome.app.window.create( 'gui/upsell.html', 
+        chrome.app.window.create( 'gui/upsell.html',
                                   { width: 520,
                                     id:"upsell",
                                     height: 480 },
@@ -926,7 +953,7 @@ App.prototype = {
             var height = (opts && opts.height) || 480
             var bounds = { width: width, height: height }
             // if use an ID, it saves the first opened height... strange
-            chrome.app.window.create( 'gui/'+type+'.html', 
+            chrome.app.window.create( 'gui/'+type+'.html',
                                       { bounds: bounds,
                                          },
                                       _.bind(this.window_opened, this, type, callback)
@@ -943,13 +970,13 @@ App.prototype = {
         delete this.popup_windows[type]
     },
     focus_or_open_help: function() {
-        if (this.help_window) { 
+        if (this.help_window) {
             this.help_window.focus();
             console.log('help already open'); return;
         }
 
         this.help_window_opening = true
-        chrome.app.window.create( 'gui/help.html', 
+        chrome.app.window.create( 'gui/help.html',
                                   { width: 520,
                                     id:"help",
                                     height: 480 },
