@@ -1,15 +1,14 @@
-## JSTorrent
+# JSTorrent (Legacy Chrome App)
 
-<a target="_blank" href="https://chrome.google.com/webstore/detail/jstorrent/anhdpjpojoipgpmfanmedjghaligalgb">![Try it now in CWS](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton.png "Install JSTorrent")</a>
-
-
-[JSTorrent Available for install Chrome Web Store](https://chrome.google.com/webstore/detail/jstorrent/anhdpjpojoipgpmfanmedjghaligalgb)
-
-Get the [JSTorrent Helper Extension](https://chrome.google.com/webstore/detail/jstorrent-helper-extensio/bnceafpojmnimbnhamaeedgomdcgnbjk), which adds a right click "Add to JSTorrent" menu for magnet links and .torrent files
+> **This project is retired.** Chrome Apps have been deprecated by Google and are no longer supported.
+>
+> **The new JSTorrent is available at [jstorrent.com](https://jstorrent.com)** — a modern, full-featured BitTorrent client built on a shared TypeScript engine that runs on Desktop (macOS/Windows/Linux), Android, Chrome Extension, and ChromeOS.
+>
+> Source: **[github.com/kzahel/jstorrent](https://github.com/kzahel/jstorrent)**
 
 ---
 
-JSTorrent is the original Chrome Packaged/Platform App for downloading
+JSTorrent was the original Chrome Packaged/Platform App for downloading
 torrents. It stands for "JavaScript Torrent." It is perfect for cheap
 ARM Chromebooks when you need to torrent something, but also perfect
 for your high end Chromebook Pixel. :-) While it is specifically designed
@@ -67,8 +66,6 @@ source too.
 
 - https://www.reddit.com/r/jstorrent (on Reddit)
 
-- https://plus.google.com/+Jstorrent (Google+ Community Page)
-
 - https://twitter.com/jstorrent (Twitter Page)
 
 ## Special New Features
@@ -107,5 +104,5 @@ I have disabled the "spoofing" feature.
 
 ### Credits
 
-- JSTorrent Logo - Michael Cook (https://plus.google.com/+michaelcook)
+- JSTorrent Logo - Michael Cook
 - Users and supporters that produce good bug reports :-)
