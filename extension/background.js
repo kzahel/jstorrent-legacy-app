@@ -1,7 +1,7 @@
 //console.log('extension loaded')
 var jstorrent_id = "anhdpjpojoipgpmfanmedjghaligalgb"
 var jstorrent_lite_id = "abmohcnlldaiaodkpacnldcdnjjgldfh"
-var cws_url = "https://chrome.google.com/webstore/detail/"
+var cws_url = "https://chromewebstore.google.com/detail/"
 // TODO -- add jstorrent lite
 var createProps = {
     id:"contextMenu",
