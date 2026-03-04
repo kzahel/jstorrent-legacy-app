@@ -83,7 +83,7 @@ function doShowUpdateAvailableDEV(details) {
         chrome.notifications.onButtonClicked.removeListener( onButtonClick )
         if (id == 'update-available') {
             if (idx == 0) {
-                chrome.browser.openTab( { url: "https://chrome.google.com/webstore/detail/jstorrent/anhdpjpojoipgpmfanmedjghaligalgb" } )
+                chrome.browser.openTab( { url: "https://chromewebstore.google.com/detail/jstorrent/anhdpjpojoipgpmfanmedjghaligalgb" } )
             } else if (idx == 1) {
                 // nothing
             }
