@@ -6,9 +6,9 @@
 > with a first-party Rust engine for desktop, Android and supported ChromeOS
 > configurations.
 >
-> Current source: **[github.com/kzahel/rstorrent](https://github.com/kzahel/rstorrent)**.
+> Current source: **[github.com/kzahel/jstorrent](https://github.com/kzahel/jstorrent)**.
 > The intervening TypeScript implementation is retained at
-> [github.com/kzahel/jstorrent](https://github.com/kzahel/jstorrent).
+> [github.com/kzahel/jstorrent-typescript](https://github.com/kzahel/jstorrent-typescript).
 
 ---
 
