@@ -2,9 +2,13 @@
 
 > **This project is retired.** Chrome Apps have been deprecated by Google and are no longer supported.
 >
-> **The new JSTorrent is available at [jstorrent.com](https://jstorrent.com)** — a modern, full-featured BitTorrent client built on a shared TypeScript engine that runs on Desktop (macOS/Windows/Linux), Android, Chrome Extension, and ChromeOS.
+> **The current JSTorrent is available at [jstorrent.com](https://jstorrent.com)**,
+> with a first-party Rust engine for desktop, Android and supported ChromeOS
+> configurations.
 >
-> Source: **[github.com/kzahel/jstorrent](https://github.com/kzahel/jstorrent)**
+> Current source: **[github.com/kzahel/rstorrent](https://github.com/kzahel/rstorrent)**.
+> The intervening TypeScript implementation is retained at
+> [github.com/kzahel/jstorrent](https://github.com/kzahel/jstorrent).
 
 ---
 
@@ -21,7 +25,7 @@ Chrome sandbox, so it does not have access to any files on your system
 control.
 
 I don't frequently keep this readme very up to date. You can find the
-actual changelogs in the [Chrome Web Store listing](https://chrome.google.com/webstore/detail/jstorrent/anhdpjpojoipgpmfanmedjghaligalgb), or sometimes in the [CHANGES.txt](https://github.com/kzahel/jstorrent/blob/fresh/CHANGES.txt)
+actual changelogs in the [Chrome Web Store listing](https://chrome.google.com/webstore/detail/jstorrent/anhdpjpojoipgpmfanmedjghaligalgb), or sometimes in the [CHANGES.txt](CHANGES.txt)
 
 One of my main goals with this project is to get it nearly as fast as
 the other clients. Disk I/O is pretty slow with the chrome APIs, which I am working on optimizing for.
